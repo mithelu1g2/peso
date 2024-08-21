@@ -1,3 +1,6 @@
+
+HTML
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,3 +30,34 @@
 </body>
 </html>
 
+
+JAVA SCRIPT
+
+function calcularPesoIdeal() {
+  
+    var altura = document.getElementById('altura').value;
+    var sexo = document.getElementById('sexo').value;
+
+    
+    altura = +altura;
+
+    
+    if (altura <= 0) {
+        document.getElementById('resultado').innerText = 'Por favor, insira uma altura válida (maior que zero).';
+        return;
+    }
+    
+    if (!sexo) {
+        document.getElementById('resultado').innerText = 'Por favor, selecione seu sexo.';
+        return;
+    }
+
+    var pesoIdeal;
+    if (sexo === 'M') {
+        pesoIdeal = (72.7 * altura) - 58;
+    } else {
+        pesoIdeal = (62.1 * altura) - 47;
+    }
+
+    document.getElementById('resultado').innerText = 'O seu peso ideal é: ' + pesoIdeal.toFixed(2) + ' kg.';
+}o
